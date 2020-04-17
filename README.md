@@ -1,3 +1,5 @@
+![build](https://github.com/aquasecurity/starboard-aqua-csp-webhook/workflows/build/badge.svg)
+
 # Starboard Aqua CSP Webhook
 
 ## Getting started
@@ -62,3 +64,7 @@ report:
     severity: CRITICAL
     vulnerabilityID: CVE-2016-2779
 ```
+
+## License
+
+This repository is available under the [Apache License 2.0](https://github.com/aquasecurity/starboard-aqua-csp-webhook/blob/master/LICENSE).

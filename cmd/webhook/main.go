@@ -15,34 +15,38 @@ import (
 )
 
 func main() {
+	log.SetLevel(log.DebugLevel)
 	if err := run(os.Args); err != nil {
-		log.Fatalf("error: %v", err)
+		log.Fatalf("Error: %v", err)
 	}
 }
 
 func run(_ []string) (err error) {
 	mux := http.NewServeMux()
-	mux.HandleFunc("/", home)
-	log.Println("Starting server on :4000")
+	mux.HandleFunc("/", acceptScanReport)
+	log.Info("Starting server on :4000")
 	err = http.ListenAndServe(":4000", mux)
 	return
 }
 
-func home(w http.ResponseWriter, r *http.Request) {
-	log.Printf("Received request: %s %s", r.Method, r.URL.String())
-	log.Printf("Request headers: %v", r.Header)
+func acceptScanReport(w http.ResponseWriter, r *http.Request) {
+	log.Debugf("Request URL: %s %s", r.Method, r.URL.String())
+	log.Debugf("Request Headers: %v", r.Header)
 
 	var report aqua.ScanReport
 	err := json.NewDecoder(r.Body).Decode(&report)
 	if err != nil {
-		log.Printf("Error: %v", err)
+		log.Errorf("Error: %v", err)
 	}
-	defer r.Body.Close()
-	log.Printf("Scan Digest: %s", report.Digest)
-	log.Printf("Scan Image: %s", report.Image)
-	log.Printf("Scan PullName: %s", report.PullName)
-	log.Printf("Scan summary: %+v", report.VulnerabilitySummary)
-	log.Printf("Scan options: %+v", report.ScanOptions)
+	defer func() {
+		_ = r.Body.Close()
+	}()
+
+	log.Debugf("Scan Digest: %s", report.Digest)
+	log.Debugf("Scan Image: %s", report.Image)
+	log.Debugf("Scan PullName: %s", report.PullName)
+	log.Debugf("Scan summary: %+v", report.VulnerabilitySummary)
+	log.Debugf("Scan options: %+v", report.ScanOptions)
 
 	err = save(report)
 	if err != nil {
