@@ -9,11 +9,16 @@ import (
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func FromAquaScanReport(source aqua.ScanReport) (starboardReport security.VulnerabilityReport) {
+func FromAquaScanReport(aquaReport aqua.ScanReport) (starboardReport security.VulnerabilityReport) {
 	var items []security.VulnerabilityItem
 
-	for _, resourceScan := range source.Resources {
+	for _, resourceScan := range aquaReport.Resources {
 		for _, vln := range resourceScan.Vulnerabilities {
+			log.WithFields(log.Fields{
+				"name": resourceScan.Resource.Name,
+				"path": resourceScan.Resource.Path,
+				"type": resourceScan.Resource.Type,
+			}).Trace("Resource")
 			var pkg string
 			switch resourceScan.Resource.Type {
 			case aqua.Library:
@@ -26,7 +31,7 @@ func FromAquaScanReport(source aqua.ScanReport) (starboardReport security.Vulner
 					"resource_path": resourceScan.Resource.Path,
 					"resource_type": resourceScan.Resource.Type,
 				}).Warn("Unknown resource type")
-				pkg = resourceScan.Resource.Path
+				pkg = resourceScan.Resource.Name
 			}
 			items = append(items, security.VulnerabilityItem{
 				VulnerabilityID:  vln.Name,
@@ -46,16 +51,29 @@ func FromAquaScanReport(source aqua.ScanReport) (starboardReport security.Vulner
 			Name:   "Aqua CSP",
 			Vendor: "Aqua Security",
 		},
-		Summary: toSummary(source.VulnerabilitySummary),
+		Summary: toSummary(aquaReport.VulnerabilitySummary),
 	}
 
 	return
 }
 
-func toSeverity(_ aqua.Vulnerability) (severity security.Severity) {
-	// TODO Implement me
-	severity = security.SeverityCritical
-	return
+func toSeverity(v aqua.Vulnerability) security.Severity {
+	switch severity := v.AquaSeverity; severity {
+	case "critical":
+		return security.SeverityCritical
+	case "high":
+		return security.SeverityHigh
+	case "medium":
+		return security.SeverityMedium
+	case "low":
+		return security.SeverityLow
+	case "negligible":
+		// TODO We should have severity None defined in k8s-security-crds
+		return security.SeverityUnknown
+	default:
+		log.WithField("severity", severity).Warn("Unknown Aqua severity")
+		return security.SeverityUnknown
+	}
 }
 
 func toLinks(v aqua.Vulnerability) []string {
@@ -70,6 +88,10 @@ func toLinks(v aqua.Vulnerability) []string {
 }
 
 func toSummary(aquaSummary aqua.VulnerabilitySummary) security.VulnerabilitySummary {
-	// TODO Implement me
-	return security.VulnerabilitySummary{}
+	return security.VulnerabilitySummary{
+		CriticalCount: aquaSummary.Critical,
+		HighCount:     aquaSummary.High,
+		MediumCount:   aquaSummary.Medium,
+		LowCount:      aquaSummary.Low,
+	}
 }
