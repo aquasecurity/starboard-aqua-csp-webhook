@@ -16,7 +16,7 @@ import (
 
 func main() {
 	if err := run(os.Args); err != nil {
-		log.Fatalf("error: %w", err)
+		log.Fatalf("error: %v", err)
 	}
 }
 

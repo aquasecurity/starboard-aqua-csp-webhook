@@ -14,6 +14,9 @@
    ```
    $ kubectl starboard init
    ```
+   or
+   ```
+   $ kubectl apply -f https://github.com/aquasecurity/k8s-security-crds/blob/master/kube/crd/vulnerabilities-crd.yaml
 4. Configure Starboard webhook in Aqua CSP management console:
 
    ![](docs/images/settings_webhook.png)
