@@ -1,0 +1,78 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: starboard
+spec: {}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: starboard
+  namespace: starboard
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: starboard
+  namespace: starboard
+rules:
+  - apiGroups:
+      - aquasecurity.github.com
+    resources:
+      - vulnerabilities
+    verbs:
+      - create
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: starboard
+  namespace: starboard
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: starboard
+subjects:
+  - kind: ServiceAccount
+    name: starboard
+    namespace: starboard
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: starboard-aqua-csp-webhook
+  namespace: starboard
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: starboard-aqua-csp-webhook
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        run: starboard-aqua-csp-webhook
+    spec:
+      serviceAccountName: starboard
+      containers:
+        - image: aquasec/starboard-aqua-csp-webhook:dev
+          name: starboard-webhook
+          ports:
+            - name: api-server
+              containerPort: 4000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: starboard-aqua-csp-webhook
+  namespace: starboard
+spec:
+  type: ClusterIP
+  selector:
+    run: starboard-aqua-csp-webhook
+  ports:
+    - name: api-server
+      protocol: TCP
+      port: 4000
+      targetPort: 4000
