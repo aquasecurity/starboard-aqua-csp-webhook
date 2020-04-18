@@ -2,13 +2,23 @@
 
 # Starboard Aqua CSP Webhook
 
+This webhook is the image scan results webhook configurable in Aqua CSP management console to integrate with the
+[Starboard] tool kit.
+
+## TOC
+
+- [Getting started](#getting-started)
+- [How does it work?](#how-does-it-work)
+- [Configuration](#configuration)
+- [License](#license)
+
 ## Getting started
 
-1. Build docker image:
+1. Build Docker image:
    ```
    $ make docker-build
    ```
-2. Deploy webhook on Kubernetes:
+2. Deploy webhook on Kubernetes in the `starboard` namespace:
    ```
    $ kubectl apply -f ./kube/webhook.yaml
    ```
@@ -19,6 +29,7 @@
    or
    ```
    $ kubectl apply -f https://github.com/aquasecurity/k8s-security-crds/blob/master/kube/crd/vulnerabilities-crd.yaml
+   ```
 4. Configure Starboard webhook in Aqua CSP management console:
 
    ![](docs/images/settings_webhook.png)
@@ -65,6 +76,17 @@ report:
     vulnerabilityID: CVE-2016-2779
 ```
 
+## Configuration
+
+Configuration of the webhook is done via environment variables at startup.
+
+| Name                                    | Default     | Description                        |
+| --------------------------------------- | ----------- | ---------------------------------- |
+| `STARBOARD_WEBHOOK_API_ADDR`            | `:4000`     | Binding address for the API server |
+| `STARBOARD_WEBHOOK_STARBOARD_NAMESPACE` | `starboard` | Starboard namespace                |
+
 ## License
 
 This repository is available under the [Apache License 2.0](https://github.com/aquasecurity/starboard-aqua-csp-webhook/blob/master/LICENSE).
+
+[starboard]: https://github.com/aquasecurity/starboard
