@@ -9,17 +9,17 @@ const (
 )
 
 type ScanReport struct {
-	Image                string               `json:"image"`
-	Registry             string               `json:"registry"`
-	Digest               string               `json:"digest"`
-	OS                   string               `json:"os"`
-	Version              string               `json:"version"`
-	PullName             string               `json:"pull_name"`
-	InitiatingUser       string               `json:"initiating_user"`
-	Resources            []ResourceScan       `json:"resources"`
-	VulnerabilitySummary VulnerabilitySummary `json:"vulnerability_summary"`
-	Warnings             []Warning            `json:"warnings"`
-	ScanOptions          ScanOptions          `json:"scan_options"`
+	Image          string               `json:"image"`
+	Registry       string               `json:"registry"`
+	Digest         string               `json:"digest"`
+	OS             string               `json:"os"`
+	Version        string               `json:"version"`
+	PullName       string               `json:"pull_name"`
+	InitiatingUser string               `json:"initiating_user"`
+	Resources      []ResourceScan       `json:"resources"`
+	Summary        VulnerabilitySummary `json:"vulnerability_summary"`
+	Warnings       []Warning            `json:"warnings"`
+	ScanOptions    ScanOptions          `json:"scan_options"`
 }
 
 type ResourceScan struct {

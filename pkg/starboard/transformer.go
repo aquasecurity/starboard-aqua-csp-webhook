@@ -51,7 +51,7 @@ func FromAquaScanReport(aquaReport aqua.ScanReport) (starboardReport security.Vu
 			Name:   "Aqua CSP",
 			Vendor: "Aqua Security",
 		},
-		Summary: toSummary(aquaReport.VulnerabilitySummary),
+		Summary: toSummary(aquaReport.Summary),
 	}
 
 	return

@@ -1,17 +1,17 @@
 package main
 
 import (
-	"encoding/json"
 	"net/http"
 	"os"
-	"strings"
 
-	log "github.com/sirupsen/logrus"
+	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/etc"
 
-	secapi "github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned"
-	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/aqua"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/starboard"
 	"k8s.io/client-go/rest"
+
+	secapi "github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned"
+	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/http/api"
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
@@ -22,43 +22,10 @@ func main() {
 }
 
 func run(_ []string) (err error) {
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", acceptScanReport)
-	log.Info("Starting server on :4000")
-	err = http.ListenAndServe(":4000", mux)
-	return
-}
-
-func acceptScanReport(w http.ResponseWriter, r *http.Request) {
-	log.Debugf("Request URL: %s %s", r.Method, r.URL.String())
-	log.Debugf("Request Headers: %v", r.Header)
-
-	var report aqua.ScanReport
-	err := json.NewDecoder(r.Body).Decode(&report)
+	config, err := etc.GetConfig()
 	if err != nil {
-		log.Errorf("Error: %v", err)
+		return
 	}
-	defer func() {
-		_ = r.Body.Close()
-	}()
-
-	log.Debugf("Scan Digest: %s", report.Digest)
-	log.Debugf("Scan Image: %s", report.Image)
-	log.Debugf("Scan PullName: %s", report.PullName)
-	log.Debugf("Scan summary: %+v", report.VulnerabilitySummary)
-	log.Debugf("Scan options: %+v", report.ScanOptions)
-
-	err = save(report)
-	if err != nil {
-		log.Error("Error while saving vulnerabilities report to CR: %w", err)
-	}
-
-	w.WriteHeader(http.StatusOK)
-}
-
-func save(report aqua.ScanReport) (err error) {
-	sr := starboard.FromAquaScanReport(report)
-
 	cfg, err := rest.InClusterConfig()
 	if err != nil {
 		return
@@ -68,11 +35,11 @@ func save(report aqua.ScanReport) (err error) {
 		return
 	}
 
-	writer := starboard.NewWriter(clientset)
-	err = writer.Write(strings.Replace(report.Digest, ":", ".", 1), sr)
-	if err != nil {
-		return
-	}
-
+	writer := starboard.NewWriter(config.Starboard, clientset)
+	handler := api.NewHandler(writer)
+	mux := http.NewServeMux()
+	mux.HandleFunc("/", handler.AcceptScanReport)
+	log.Infof("Starting server on %s", config.API.Addr)
+	err = http.ListenAndServe(config.API.Addr, mux)
 	return
 }
