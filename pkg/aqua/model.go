@@ -67,13 +67,15 @@ type VulnerabilitySummary struct {
 }
 
 type ScanOptions struct {
-	ScanMalware        bool `json:"scan_malware"`
-	ScanFiles          bool `json:"scan_files"`
-	ManualPullFallback bool `json:"manual_pull_fallback"`
-	SaveAdHockScans    bool `json:"save_adhoc_scans"`
-	Dockerless         bool `json:"dockerless"`
-	EnableFastScanning bool `json:"enable_fast_scanning"`
-	SuggestOSUpgrade   bool `json:"suggest_os_upgrade"`
+	ScanMalware              bool `json:"scan_malware"`
+	ScanFiles                bool `json:"scan_files"`
+	ManualPullFallback       bool `json:"manual_pull_fallback"`
+	SaveAdHockScans          bool `json:"save_adhoc_scans"`
+	Dockerless               bool `json:"dockerless"`
+	EnableFastScanning       bool `json:"enable_fast_scanning"`
+	SuggestOSUpgrade         bool `json:"suggest_os_upgrade"`
+	IncludeSiblingAdvisories bool `json:"include_sibling_advisories"`
+	UseCVSS3                 bool `json:"use_cvss3"`
 }
 
 type Warning struct {
