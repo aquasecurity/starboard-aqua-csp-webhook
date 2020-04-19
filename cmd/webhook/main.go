@@ -1,9 +1,11 @@
 package main
 
 import (
-	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
-	"net/http"
 	"os"
+	"os/signal"
+	"syscall"
+
+	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/etc"
 
@@ -16,7 +18,7 @@ import (
 )
 
 func main() {
-	log.SetLevel(log.DebugLevel)
+	log.SetLevel(etc.GetLogLevel())
 	if err := run(os.Args); err != nil {
 		log.Fatalf("Error: %v", err)
 	}
@@ -39,7 +41,25 @@ func run(_ []string) (err error) {
 	converter := starboard.NewConverter(ext.SystemClock)
 	writer := starboard.NewWriter(config.Starboard, clientset)
 	handler := api.NewHandler(converter, writer)
-	log.Infof("Starting server on %s", config.API.Addr)
-	err = http.ListenAndServe(config.API.Addr, handler)
+	apiServer := api.NewServer(config.API, handler)
+
+	complete := make(chan struct{})
+
+	go func() {
+		sigint := make(chan os.Signal, 1)
+		signal.Notify(sigint, syscall.SIGINT, syscall.SIGTERM)
+		captured := <-sigint
+		log.WithField("signal", captured.String()).Trace("Trapped os signal")
+
+		apiServer.Shutdown()
+
+		close(complete)
+	}()
+
+	go func() {
+		apiServer.ListenAndServe()
+	}()
+
+	<-complete
 	return
 }

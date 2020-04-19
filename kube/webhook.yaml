@@ -59,6 +59,8 @@ spec:
         - image: aquasec/starboard-aqua-csp-webhook:dev
           name: starboard-webhook
           env:
+            - name: "STARBOARD_WEBHOOK_LOG_LEVEL"
+              value: "trace"
             - name: "STARBOARD_WEBHOOK_API_ADDR"
               value: ":4000"
             - name: "STARBOARD_WEBHOOK_STARBOARD_NAMESPACE"
