@@ -1,0 +1,2700 @@
+{
+  "image": "library/photon:3.0-20200202",
+  "registry": "Harbor",
+  "digest": "sha256:9bf8e3dfef5c248bc8880d228241887a1f411b0d2700150e3eeb6ad8c5763df2",
+  "scan_started": {
+    "seconds": 1587287249,
+    "nanos": 460928258
+  },
+  "scan_duration": 4,
+  "image_size": 35170819,
+  "history": [
+    {
+      "id": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+      "created": 1580779292,
+      "created_by": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+      "layer_size": 35170819
+    },
+    {
+      "id": "sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4",
+      "created": 1580779292,
+      "created_by": "/bin/sh -c #(nop)  LABEL name=Photon OS x86_64/3.0 Base Image vendor=VMware build-date=20200202"
+    },
+    {
+      "id": "sha256:a3ed95caeb02ffe68cdd9fd84406680ae93d633cb16422d00e8a7c22955b46d4",
+      "created": 1580779292,
+      "created_by": "/bin/sh -c #(nop)  CMD [\"/bin/bash\"]"
+    }
+  ],
+  "metadata": {
+    "id": "sha256:9bf8e3dfef5c248bc8880d228241887a1f411b0d2700150e3eeb6ad8c5763df2",
+    "repo_digests": [
+      "library/photon@sha256:b1081f4cf496aa8cef1d9f7e1e96ba094c99fa9b5a29830038b9295c4b54ee15"
+    ],
+    "created": "2020-02-04T01:21:32.843756295Z",
+    "container_config": {
+      "env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "labels": {
+        "build-date": "20200202",
+        "name": "Photon OS x86_64/3.0 Base Image",
+        "vendor": "VMware"
+      }
+    },
+    "docker_version": "18.09.7",
+    "config": {
+      "env": [
+        "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+      ],
+      "labels": {
+        "build-date": "20200202",
+        "name": "Photon OS x86_64/3.0 Base Image",
+        "vendor": "VMware"
+      }
+    },
+    "architecture": "amd64",
+    "os": "linux",
+    "image_size": 35170819,
+    "custom_info": {
+      "microenforcer_id": "sha256:9bf8e3dfef5c248bc8880d228241887a1f411b0d2700150e3eeb6ad8c5763df2"
+    },
+    "image_type": "oci"
+  },
+  "os": "photon",
+  "version": "3.0",
+  "layers": [
+    "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6"
+  ],
+  "resources": [
+    {
+      "resource": {
+        "type": 2,
+        "path": "/usr/bin/bash",
+        "name": "bash",
+        "version": "4.4",
+        "cpe": "cpe:/a:gnu:bash:4.4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6"
+      },
+      "scanned": true,
+      "vulnerabilities": [
+        {
+          "name": "CVE-2017-5932",
+          "description": "The path autocompletion feature in Bash 4.4 allows local users to gain privileges via a crafted filename starting with a \" (double quote) character and a command substitution metacharacter.",
+          "nvd_score": 4.6,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2017-5932",
+          "vendor_score": 4.6,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2017-03-27",
+          "modification_date": "2017-03-31",
+          "nvd_score_v3": 7.8,
+          "nvd_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.8,
+          "vendor_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.8,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2019-18276",
+          "description": "An issue was discovered in disable_priv_mode in shell.c in GNU Bash through 5.0 patch 11. By default, if Bash is run with its effective UID not equal to its real UID, it will drop privileges by setting its effective UID to its real UID. However, it does so incorrectly. On Linux and other systems that support \"saved UID\" functionality, the saved UID is not dropped. An attacker with command execution in the shell can use \"enable -f\" for runtime loading of a new builtin, which can be a shared object that calls setuid() and therefore regains privileges. However, binaries running with an effective UID of 0 are unaffected.",
+          "nvd_score": 7.2,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "nvd_severity": "high",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-18276",
+          "vendor_score": 7.2,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:C/I:C/A:C",
+          "vendor_severity": "high",
+          "publish_date": "2019-11-28",
+          "modification_date": "2020-01-22",
+          "nvd_score_v3": 7.8,
+          "nvd_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.8,
+          "vendor_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.8,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "type": 2,
+        "path": "/usr/bin/getent",
+        "name": "glibc",
+        "version": "2.28",
+        "cpe": "cpe:/a:gnu:glibc:2.28",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6"
+      },
+      "scanned": true,
+      "vulnerabilities": [
+        {
+          "name": "CVE-2019-9169",
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.29, proceed_next_node in posix/regexec.c has a heap-based buffer over-read via an attempted case-insensitive regular-expression match.",
+          "nvd_score": 7.5,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+          "nvd_severity": "high",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-9169",
+          "vendor_score": 7.5,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+          "vendor_severity": "high",
+          "publish_date": "2019-02-26",
+          "modification_date": "2019-04-16",
+          "nvd_score_v3": 9.8,
+          "nvd_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "nvd_severity_v3": "critical",
+          "vendor_score_v3": 9.8,
+          "vendor_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "vendor_severity_v3": "critical",
+          "aqua_score": 9.8,
+          "aqua_severity": "critical",
+          "aqua_vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2020-6096",
+          "description": "An exploitable signed comparison vulnerability exists in the ARMv7 memcpy() implementation of GNU glibc 2.30.9000. Calling memcpy() (on ARMv7 targets that utilize the GNU glibc implementation) with a negative value for the 'num' parameter results in a signed comparison vulnerability. If an attacker underflows the 'num' parameter to memcpy(), this vulnerability could lead to undefined behavior such as writing to out-of-bounds memory and potentially remote code execution. Furthermore, this memcpy() implementation allows for program execution to continue in scenarios where a segmentation fault or crash should have occurred. The dangers occur in that subsequent execution and iterations of this code will be executed with this corrupted data.",
+          "nvd_score": 7.5,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+          "nvd_severity": "high",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-6096",
+          "vendor_score": 7.5,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:N/AC:L/Au:N/C:P/I:P/A:P",
+          "vendor_severity": "high",
+          "publish_date": "2020-04-01",
+          "modification_date": "2020-04-06",
+          "nvd_score_v3": 9.8,
+          "nvd_vectors_v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "nvd_severity_v3": "critical",
+          "vendor_score_v3": 9.8,
+          "vendor_vectors_v3": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "vendor_severity_v3": "critical",
+          "aqua_score": 9.8,
+          "aqua_severity": "critical",
+          "aqua_vectors": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:H/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2019-6488",
+          "description": "The string component in the GNU C Library (aka glibc or libc6) through 2.28, when running on the x32 architecture, incorrectly attempts to use a 64-bit register for size_t in assembly codes, which can lead to a segmentation fault or possibly unspecified other impact, as demonstrated by a crash in __memmove_avx_unaligned_erms in sysdeps/x86_64/multiarch/memmove-vec-unaligned-erms.S during a memcpy.",
+          "nvd_score": 4.6,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-6488",
+          "vendor_score": 4.6,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2019-01-18",
+          "modification_date": "2019-02-05",
+          "nvd_score_v3": 7.8,
+          "nvd_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.8,
+          "vendor_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.8,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:H/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2018-19591",
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.28, attempting to resolve a crafted hostname via getaddrinfo() leads to the allocation of a socket descriptor that is not closed. This is related to the if_nametoindex() function.",
+          "nvd_score": 5,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-19591",
+          "vendor_score": 5,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2018-12-04",
+          "modification_date": "2019-03-21",
+          "nvd_score_v3": 7.5,
+          "nvd_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.5,
+          "vendor_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.5,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2018-20796",
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(\\227|)(\\\\1\\\\1|t1|\\\\\\2537)+' in grep.",
+          "nvd_score": 5,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2018-20796",
+          "vendor_score": 5,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2019-02-26",
+          "modification_date": "2019-11-05",
+          "nvd_score_v3": 7.5,
+          "nvd_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.5,
+          "vendor_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.5,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2019-9192",
+          "description": "** DISPUTED ** In the GNU C Library (aka glibc or libc6) through 2.29, check_dst_limits_calc_pos_1 in posix/regexec.c has Uncontrolled Recursion, as demonstrated by '(|)(\\\\1\\\\1)*' in grep, a different issue than CVE-2018-20796. NOTE: the software maintainer disputes that this is a vulnerability because the behavior occurs only with a crafted pattern.",
+          "nvd_score": 5,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-9192",
+          "vendor_score": 5,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:N/AC:L/Au:N/C:N/I:N/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2019-02-26",
+          "modification_date": "2019-11-05",
+          "nvd_score_v3": 7.5,
+          "nvd_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "nvd_severity_v3": "high",
+          "vendor_score_v3": 7.5,
+          "vendor_vectors_v3": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "vendor_severity_v3": "high",
+          "aqua_score": 7.5,
+          "aqua_severity": "high",
+          "aqua_vectors": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2019-7309",
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.29, the memcmp function for the x32 architecture can incorrectly return zero (indicating that the inputs are equal) because the RDX most significant bit is mishandled.",
+          "nvd_score": 2.1,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+          "nvd_severity": "low",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-7309",
+          "vendor_score": 2.1,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+          "vendor_severity": "low",
+          "publish_date": "2019-02-03",
+          "modification_date": "2019-02-27",
+          "nvd_score_v3": 5.5,
+          "nvd_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "nvd_severity_v3": "medium",
+          "vendor_score_v3": 5.5,
+          "vendor_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "vendor_severity_v3": "medium",
+          "aqua_score": 5.5,
+          "aqua_severity": "medium",
+          "aqua_vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2020-10029",
+          "description": "The GNU C Library (aka glibc or libc6) before 2.32 could overflow an on-stack buffer during range reduction if an input to an 80-bit long double function contains a non-canonical bit pattern, a seen when passing a 0x5d414141414141410000 value to sinl on x86 targets. This is related to sysdeps/ieee754/ldbl-96/e_rem_pio2l.c.",
+          "nvd_score": 2.1,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+          "nvd_severity": "low",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2020-10029",
+          "vendor_score": 2.1,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:N/I:N/A:P",
+          "vendor_severity": "low",
+          "publish_date": "2020-03-04",
+          "modification_date": "2020-03-25",
+          "nvd_score_v3": 5.5,
+          "nvd_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "nvd_severity_v3": "medium",
+          "vendor_score_v3": 5.5,
+          "vendor_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "vendor_severity_v3": "medium",
+          "aqua_score": 5.5,
+          "aqua_severity": "medium",
+          "aqua_vectors": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:N/I:N/A:H",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2016-10739",
+          "description": "In the GNU C Library (aka glibc or libc6) through 2.28, the getaddrinfo function would successfully parse a string that contained an IPv4 address followed by whitespace and arbitrary characters, which could lead applications to incorrectly assume that it had parsed a valid string, without the possibility of embedded HTTP headers or other potentially dangerous substrings.",
+          "nvd_score": 4.6,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "nvd_severity": "medium",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2016-10739",
+          "vendor_score": 4.6,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:P/I:P/A:P",
+          "vendor_severity": "medium",
+          "publish_date": "2019-01-21",
+          "modification_date": "2019-08-06",
+          "nvd_score_v3": 5.3,
+          "nvd_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "nvd_severity_v3": "medium",
+          "vendor_score_v3": 5.3,
+          "vendor_vectors_v3": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "vendor_severity_v3": "medium",
+          "aqua_score": 5.3,
+          "aqua_severity": "medium",
+          "aqua_vectors": "CVSS:3.0/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:L/A:L",
+          "aqua_scoring_system": "CVSS V3"
+        },
+        {
+          "name": "CVE-2019-19126",
+          "description": "On the x86-64 architecture, the GNU C Library (aka glibc) before 2.31 fails to ignore the LD_PREFER_MAP_32BIT_EXEC environment variable during program execution after a security transition, allowing local attackers to restrict the possible mapping addresses for loaded libraries and thus bypass ASLR for a setuid program.",
+          "nvd_score": 2.1,
+          "nvd_score_version": "CVSS v2",
+          "nvd_vectors": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+          "nvd_severity": "low",
+          "nvd_url": "https://web.nvd.nist.gov/view/vuln/detail?vulnId=CVE-2019-19126",
+          "vendor_score": 2.1,
+          "vendor_score_version": "CVSS v2",
+          "vendor_vectors": "AV:L/AC:L/Au:N/C:P/I:N/A:N",
+          "vendor_severity": "low",
+          "publish_date": "2019-11-19",
+          "modification_date": "2020-01-21",
+          "nvd_score_v3": 3.3,
+          "nvd_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          "nvd_severity_v3": "low",
+          "vendor_score_v3": 3.3,
+          "vendor_vectors_v3": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          "vendor_severity_v3": "low",
+          "aqua_score": 3.3,
+          "aqua_severity": "low",
+          "aqua_vectors": "CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:L/I:N/A:N",
+          "aqua_scoring_system": "CVSS V3"
+        }
+      ]
+    },
+    {
+      "resource": {
+        "type": 2,
+        "path": "/usr/bin/openssl",
+        "name": "openssl",
+        "version": "1.0.2u",
+        "cpe": "cpe:/a:openssl:openssl:1.0.2u",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/motdgen.d/02-tdnf-updateinfo.sh",
+        "cpe": "file:/c01f5a32f9f9e845a88b6cd4c4440868248b7089",
+        "hash": "sha1:c01f5a32f9f9e845a88b6cd4c4440868248b7089",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:25edeeacf14fd99c0f111119dba023ab"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/pki/tls/certs/ca-bundle.crt",
+        "cpe": "file:/4e49215245aad3aed7c68734f6a4992d6a31caec",
+        "hash": "sha1:4e49215245aad3aed7c68734f6a4992d6a31caec",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:aa886a9170a4f6a05338f522d9271283"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/ssl/misc/CA.sh",
+        "cpe": "file:/5549c358473a0ed23a335360befc29d1b03492ea",
+        "hash": "sha1:5549c358473a0ed23a335360befc29d1b03492ea",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:948439fd3f17dc7d9511305aa1f1355a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/ssl/misc/c_hash",
+        "cpe": "file:/debb1d58b936be53e4de00fcca51453964a2e7cb",
+        "hash": "sha1:debb1d58b936be53e4de00fcca51453964a2e7cb",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:11612e0bac6e19e1bb35d038e691b72c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/ssl/misc/c_info",
+        "cpe": "file:/1a667fc7a808530f5c71fb69171ec2443ff29125",
+        "hash": "sha1:1a667fc7a808530f5c71fb69171ec2443ff29125",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:45bbf2e1f1a5a2ff772ac81ecab10729"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/ssl/misc/c_issuer",
+        "cpe": "file:/0cc791b7dc5957bf43b4cfcb5e689dea8d83b1ae",
+        "hash": "sha1:0cc791b7dc5957bf43b4cfcb5e689dea8d83b1ae",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7a5ec6cc06ca0d45332feb59a9aaaf1a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/etc/ssl/misc/c_name",
+        "cpe": "file:/76adfc186ff506274fa80660079daca8e52bb0bc",
+        "hash": "sha1:76adfc186ff506274fa80660079daca8e52bb0bc",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:e6828944a8b442b7a040405fbe3f9a1f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/bash",
+        "cpe": "file:/febd16515d4e6fe5255c3ccecff134d4a4c73083",
+        "hash": "sha1:febd16515d4e6fe5255c3ccecff134d4a4c73083",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:3224ecf732647d1933126f2b37c259f0"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/bashbug",
+        "cpe": "file:/58c8e0ea87d2255908609726aae249ff62aa8812",
+        "hash": "sha1:58c8e0ea87d2255908609726aae249ff62aa8812",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:f243085fb33015922f9eea4f5b9a8f3c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/curl",
+        "cpe": "file:/71708fa060f0188d2955b613d6ce53988fe9539a",
+        "hash": "sha1:71708fa060f0188d2955b613d6ce53988fe9539a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5624602ca36daa0f6d3a9341ca65ee83"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/curl-config",
+        "cpe": "file:/01c09e8b711fb67c05a8631b8e24f7695b9ede04",
+        "hash": "sha1:01c09e8b711fb67c05a8631b8e24f7695b9ede04",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:24728f9c4e0c6329a2542bcc20eca8a0"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/deltainfoxml2solv",
+        "cpe": "file:/7d980b0b046e71eac674edb038952dc62b828495",
+        "hash": "sha1:7d980b0b046e71eac674edb038952dc62b828495",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:cff7e4d24e8a5282efdd44fe346f0f9a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/dumpsolv",
+        "cpe": "file:/cffa7be138a140e377cc23a18b0acc1a635528c3",
+        "hash": "sha1:cffa7be138a140e377cc23a18b0acc1a635528c3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:730131c9188c0fb1323017f145d9ca8b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/gencat",
+        "cpe": "file:/37215de1ac6d85e84cb593233547800d4a025111",
+        "hash": "sha1:37215de1ac6d85e84cb593233547800d4a025111",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fb0fbecfb09d243010407ef7caed090e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/getconf",
+        "cpe": "file:/1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "hash": "sha1:1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:86e997441d8779e60c12865f8af5506e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/getent",
+        "cpe": "file:/759e78e7015d4a7de7cb259ab24fd85efd72bbf1",
+        "hash": "sha1:759e78e7015d4a7de7cb259ab24fd85efd72bbf1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c9ee02543a269af6fbbd02dae545ee0d"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/gss-client",
+        "cpe": "file:/dc5715e6f9c7c96fe428ce5e6f2ed1797a69d452",
+        "hash": "sha1:dc5715e6f9c7c96fe428ce5e6f2ed1797a69d452",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ac66e12a4abc4f8882209196974cf588"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/installcheck",
+        "cpe": "file:/c697745cd0b4af609da592b18a8b5d2b38902c75",
+        "hash": "sha1:c697745cd0b4af609da592b18a8b5d2b38902c75",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:49968d0df318751652aeb8e4ec4e8cc4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/k5srvutil",
+        "cpe": "file:/67c9b21eb4984d7e09d8b288b6c67c9b97165c1e",
+        "hash": "sha1:67c9b21eb4984d7e09d8b288b6c67c9b97165c1e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1ecb4704332d03d6ef7b1fd40de12681"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kadmin",
+        "cpe": "file:/0a44eb6935fb7e0f805e911042071a146179b0cc",
+        "hash": "sha1:0a44eb6935fb7e0f805e911042071a146179b0cc",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:bb52f838c0f57d2285f30c76441c4460"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kdestroy",
+        "cpe": "file:/366c8cb32a4133ad909f44728f0413af4d99eca3",
+        "hash": "sha1:366c8cb32a4133ad909f44728f0413af4d99eca3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c8e5da911fbe9975924bd3be4b64a4aa"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kinit",
+        "cpe": "file:/a8d918b786e8e0fc04be6523289dbebe2566bef9",
+        "hash": "sha1:a8d918b786e8e0fc04be6523289dbebe2566bef9",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fa5494065f3e6dc0e3877211427812e6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/klist",
+        "cpe": "file:/d5a52b549c772badaa1acad08997b7f7cbf5a656",
+        "hash": "sha1:d5a52b549c772badaa1acad08997b7f7cbf5a656",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:97a48b86681a55e19bc1a6c2f9c81fd5"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kpasswd",
+        "cpe": "file:/69f532b5d3a943c44f2f7df8bdc34c2449455ce1",
+        "hash": "sha1:69f532b5d3a943c44f2f7df8bdc34c2449455ce1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:30814e9add65b04ac9af113ccbb1cc36"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/krb5-config",
+        "cpe": "file:/4eadc334b65dffef56b4773a83e44b4e65194a95",
+        "hash": "sha1:4eadc334b65dffef56b4773a83e44b4e65194a95",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:e5ab8f7ae31fe23afe99a7fd689667f2"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kswitch",
+        "cpe": "file:/e23fc0302f96a647b1219fd894d2529d62b216c7",
+        "hash": "sha1:e23fc0302f96a647b1219fd894d2529d62b216c7",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4fca3916ee6d427a0fd612c3651ac32b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/ktutil",
+        "cpe": "file:/b64d53c7daf9e84893be87099e4333d233da9e95",
+        "hash": "sha1:b64d53c7daf9e84893be87099e4333d233da9e95",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:07c20df1042660ddcbbb80c05b430a56"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/kvno",
+        "cpe": "file:/c30bf42b5d2c13c4b5b5f26eed78363efa07cce8",
+        "hash": "sha1:c30bf42b5d2c13c4b5b5f26eed78363efa07cce8",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5436788504081ed2080c09e0f08686a1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/ldd",
+        "cpe": "file:/b1db98ef7cf98f3dbdc3babaea499de93e14ef8a",
+        "hash": "sha1:b1db98ef7cf98f3dbdc3babaea499de93e14ef8a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1e6813cebd70f3407611a2ca82528b21"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/locale",
+        "cpe": "file:/2ec7e3ad7d0dd72f3563f0693e15f56933ac1c04",
+        "hash": "sha1:2ec7e3ad7d0dd72f3563f0693e15f56933ac1c04",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:13189e5df45aacdb74db5e44c03114c3"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/localedef",
+        "cpe": "file:/2b36274f2ec0c5b155d2dcf37a94806f85289c12",
+        "hash": "sha1:2b36274f2ec0c5b155d2dcf37a94806f85289c12",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d95533101882726fcb729895ca753bed"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/lua",
+        "cpe": "file:/2d98c6c49df1ae1b0109782c653ef6abb3f188c9",
+        "hash": "sha1:2d98c6c49df1ae1b0109782c653ef6abb3f188c9",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:a3ac4328cc2c3821f6f79571b0b2105f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/luac",
+        "cpe": "file:/33a8cc997cea6f95db1eaca156477339b1a4b3b0",
+        "hash": "sha1:33a8cc997cea6f95db1eaca156477339b1a4b3b0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:248ee940be02b9f8277fe131430461a4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/makedb",
+        "cpe": "file:/51e339aae70a907b9d338674b0f315c7a8be4f30",
+        "hash": "sha1:51e339aae70a907b9d338674b0f315c7a8be4f30",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1307f955784e8560bd557cae8f9c4e6f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/mergesolv",
+        "cpe": "file:/d63502f424152851256e6dc7dc0dbf2509847f58",
+        "hash": "sha1:d63502f424152851256e6dc7dc0dbf2509847f58",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:2107f5982c78e66325bcf6971b46c3b5"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/nspr-config",
+        "cpe": "file:/7730150de389c62d6fef2141f147f97fae87f418",
+        "hash": "sha1:7730150de389c62d6fef2141f147f97fae87f418",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:f8556cb227b00ed2266436b06c4656f7"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/openssl",
+        "cpe": "file:/3c71b7b8eae4749ef67b4a4c09d6d69fc1de49d1",
+        "hash": "sha1:3c71b7b8eae4749ef67b4a4c09d6d69fc1de49d1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c9a21f46849e0f9ab3f64df9441301cd"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/repo2solv",
+        "cpe": "file:/9a4ace95511efae90ff29ae452f041b251de6bd2",
+        "hash": "sha1:9a4ace95511efae90ff29ae452f041b251de6bd2",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:202a3d1166e92587af0dab867e2271ce"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/repomdxml2solv",
+        "cpe": "file:/bfa0b7d0b390ecdad94880cb3f9a77a15294c6d5",
+        "hash": "sha1:bfa0b7d0b390ecdad94880cb3f9a77a15294c6d5",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fafd6f878e80fa97da1b983c8b438208"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/rpmdb2solv",
+        "cpe": "file:/722040ec92ab60611b7d4b60edc58a994ac11f4e",
+        "hash": "sha1:722040ec92ab60611b7d4b60edc58a994ac11f4e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8358bf5f4b66e4fe9d31569a110c04a9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/rpmmd2solv",
+        "cpe": "file:/50a25a70b6c4cf382f3ead83bde1c3b5b25c4efa",
+        "hash": "sha1:50a25a70b6c4cf382f3ead83bde1c3b5b25c4efa",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4a69d9191e1f6f6c636befdcb9020390"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/rpms2solv",
+        "cpe": "file:/ec84baa3c83cebb6f4197ea0921b44e81276a8cd",
+        "hash": "sha1:ec84baa3c83cebb6f4197ea0921b44e81276a8cd",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d3c1d5b26473e40c58a8ab21ee008efb"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/sclient",
+        "cpe": "file:/61ae51ac70530db89864b4362ca2905ca08ebfed",
+        "hash": "sha1:61ae51ac70530db89864b4362ca2905ca08ebfed",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ed0d441084814e9c93ccd010a6565cba"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/sim_client",
+        "cpe": "file:/bf7e0c8775e68a409643bd28e25955b156719c0f",
+        "hash": "sha1:bf7e0c8775e68a409643bd28e25955b156719c0f",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1f4b798bc7c27b3386ed7929b37ccb32"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/tdnf",
+        "cpe": "file:/bbf7087270c2785210e29a518c8f43bf48313b65",
+        "hash": "sha1:bbf7087270c2785210e29a518c8f43bf48313b65",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:319100d4e89defaec62bfb5a27bd6539"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/tdnf-cache-updateinfo",
+        "cpe": "file:/5885af6692827d8bd11be65b20f7f97b4a9102ab",
+        "hash": "sha1:5885af6692827d8bd11be65b20f7f97b4a9102ab",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7eb1a84c66b7de895731d63633a876df"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/testsolv",
+        "cpe": "file:/b74d2b8a7d28298a066de7c531570c53f3004749",
+        "hash": "sha1:b74d2b8a7d28298a066de7c531570c53f3004749",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fc0f2cbd1b9b9d4d2901aa7d4e21f237"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/toybox",
+        "cpe": "file:/1ec517e34606ab95b17a84eb9ca63a211be9e292",
+        "hash": "sha1:1ec517e34606ab95b17a84eb9ca63a211be9e292",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5929fc0569269593b609861125ad6ded"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/tzselect",
+        "cpe": "file:/0dfac5e81b15de32bd3c1f913e716af2f98419d4",
+        "hash": "sha1:0dfac5e81b15de32bd3c1f913e716af2f98419d4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8d8dd39ef9480661ed743a64c9aabcfe"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/updateinfoxml2solv",
+        "cpe": "file:/e306ed62178ce0083e194c96dfe951b1b5fcc757",
+        "hash": "sha1:e306ed62178ce0083e194c96dfe951b1b5fcc757",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:40d8fae647d7f1d882bcbaa89dd4faf2"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/uuclient",
+        "cpe": "file:/19ac3af618b7fca4e423d78b68731813afc160ae",
+        "hash": "sha1:19ac3af618b7fca4e423d78b68731813afc160ae",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5d6212af65cb29f9aac717cf9154a9b4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/bin/xmlwf",
+        "cpe": "file:/3fc35d681e4ecb621ba707aa797f90dd84e7521c",
+        "hash": "sha1:3fc35d681e4ecb621ba707aa797f90dd84e7521c",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:68a7bc410f17aa2d22f7009fa19850cd"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/basename",
+        "cpe": "file:/1af13f4f4000751a72030adf2d7a49c5a135d825",
+        "hash": "sha1:1af13f4f4000751a72030adf2d7a49c5a135d825",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fac0aa5ffb1eef43aafffbf993f375ed"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/dirname",
+        "cpe": "file:/ec472f114eb51edfeaa48d358e668156eb1555fb",
+        "hash": "sha1:ec472f114eb51edfeaa48d358e668156eb1555fb",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:92d36977f174eb66d2afa1473723bd4f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/finfo",
+        "cpe": "file:/7563c510d1a5c22efeb2051918a681e3d68ded5b",
+        "hash": "sha1:7563c510d1a5c22efeb2051918a681e3d68ded5b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:a3799ec33fd1c687a930e44da00121be"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/head",
+        "cpe": "file:/9e2a2d7e97ad360a1c06e603ed45cdbdb7129256",
+        "hash": "sha1:9e2a2d7e97ad360a1c06e603ed45cdbdb7129256",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:e2c619b29de952e62a4fa5b20cd4b94a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/id",
+        "cpe": "file:/12d53c378e905506528deafc3cb48c02ab2c9afe",
+        "hash": "sha1:12d53c378e905506528deafc3cb48c02ab2c9afe",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9b314c9c7d11db71139b6c5a7c8aa5ee"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/ln",
+        "cpe": "file:/9e893f9498da70c0560335ecf2ae9d65d3e9e8ea",
+        "hash": "sha1:9e893f9498da70c0560335ecf2ae9d65d3e9e8ea",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:050b7766bf80442f80b9d6548bb925d9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/logname",
+        "cpe": "file:/90dd991e6fa0bca5053f24ed1ed6bfaaba315a87",
+        "hash": "sha1:90dd991e6fa0bca5053f24ed1ed6bfaaba315a87",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:6292c95a94d7062e479e74fc474180b1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/mkdir",
+        "cpe": "file:/ae520e6f876d94d3da5159677cf666065c845ef6",
+        "hash": "sha1:ae520e6f876d94d3da5159677cf666065c845ef6",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d6d19b762f7e758b7d07473d688008d4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/mypid",
+        "cpe": "file:/b2f0aa3c48f8c6fc62c68f22d6212bff798aaf32",
+        "hash": "sha1:b2f0aa3c48f8c6fc62c68f22d6212bff798aaf32",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:43e562a2780a21a284c85544d428ee04"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/pathchk",
+        "cpe": "file:/b716501f185e0fc1408770a3852c41fb87403a41",
+        "hash": "sha1:b716501f185e0fc1408770a3852c41fb87403a41",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:a0205aa46d459f9708438004a72da69a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/print",
+        "cpe": "file:/7af98a90a588a32345b6e5b52b6f80c985a19a64",
+        "hash": "sha1:7af98a90a588a32345b6e5b52b6f80c985a19a64",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:09781259fc9af1fdb83105a5701f8f8c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/printenv",
+        "cpe": "file:/04f7c16dfc720ee2438f439bef2fe486d3d11d30",
+        "hash": "sha1:04f7c16dfc720ee2438f439bef2fe486d3d11d30",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:725a5efc0a83341db5ca0cd05f388a13"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/push",
+        "cpe": "file:/7804ca09eaea078742162f9cb53d7390d33b240b",
+        "hash": "sha1:7804ca09eaea078742162f9cb53d7390d33b240b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:064ffb18f82de91189c097a8069ed9e2"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/realpath",
+        "cpe": "file:/6c820d029d8909cc132e960db1451513bf0c6bf3",
+        "hash": "sha1:6c820d029d8909cc132e960db1451513bf0c6bf3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:2e2485b4b3a9733940baff68a0563e55"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/rmdir",
+        "cpe": "file:/d9e43e043249d7fb7b3be4a252392bf790ecbf73",
+        "hash": "sha1:d9e43e043249d7fb7b3be4a252392bf790ecbf73",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8fffd5c3b83931aadaf010852b9bff59"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/setpgid",
+        "cpe": "file:/a742b1379219240c8826676a63d0e176c80d70eb",
+        "hash": "sha1:a742b1379219240c8826676a63d0e176c80d70eb",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4dbb9a605784e76210f2c2e01f0da3ab"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/sleep",
+        "cpe": "file:/ce944fc88a70422891e95006b2c0f993bab22b56",
+        "hash": "sha1:ce944fc88a70422891e95006b2c0f993bab22b56",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:04a13100dc279e284d40481eb8f032e9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/strftime",
+        "cpe": "file:/d74fadf68d9c809f6a9a2a4b7bbca21c941f6ca0",
+        "hash": "sha1:d74fadf68d9c809f6a9a2a4b7bbca21c941f6ca0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:831aba9304894f8bae18433ef8159c88"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/sync",
+        "cpe": "file:/1418f8a2e7ebf3f27dcf9d307e217d622b892bb0",
+        "hash": "sha1:1418f8a2e7ebf3f27dcf9d307e217d622b892bb0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:079cfeac9aab05ad0b91f9f2b26f20d1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/tee",
+        "cpe": "file:/d8d7382f83d01e96097454ff509f2d5e1f8307c7",
+        "hash": "sha1:d8d7382f83d01e96097454ff509f2d5e1f8307c7",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:088db1df67ba1632fd40dd17b34e928b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/truefalse",
+        "cpe": "file:/9ea3e1edb496684fac02dce3d8eadd95c75f3766",
+        "hash": "sha1:9ea3e1edb496684fac02dce3d8eadd95c75f3766",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:052417583876a99855f457f856a153aa"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/tty",
+        "cpe": "file:/b0766cd5b565d97e8db31449ba9ac9cea3fd24d1",
+        "hash": "sha1:b0766cd5b565d97e8db31449ba9ac9cea3fd24d1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:875b3954bc00f799a09775536d25aba9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/uname",
+        "cpe": "file:/c2127ccf7aaad04f1a4c6819db577c274a6927f3",
+        "hash": "sha1:c2127ccf7aaad04f1a4c6819db577c274a6927f3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:52ccad1c8427074409d0c55483bcd7af"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/unlink",
+        "cpe": "file:/8dff255863480584e68258a57816e99debaebafc",
+        "hash": "sha1:8dff255863480584e68258a57816e99debaebafc",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:129faa14198dd9bdcb99b299351bd8d0"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/bash/whoami",
+        "cpe": "file:/f641d44b80ffb8cd89b2ea2635aacfd2e810b473",
+        "hash": "sha1:f641d44b80ffb8cd89b2ea2635aacfd2e810b473",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ca9ee947f74bbddc8f3c99fbf27df66c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/lib4758cca.so",
+        "cpe": "file:/dfc7ac432d5c1a1f9db6c424a72bcf4da1582fd4",
+        "hash": "sha1:dfc7ac432d5c1a1f9db6c424a72bcf4da1582fd4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:e79d293d746073e3a268debbb8019abc"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libaep.so",
+        "cpe": "file:/04609b36d079e71ba31119b19aaf3611ec999c11",
+        "hash": "sha1:04609b36d079e71ba31119b19aaf3611ec999c11",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7ff3613b32b1e50031f5b721650cad5b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libatalla.so",
+        "cpe": "file:/ba3a7a59cef5059f4674b5077ad9e98e18a72e9b",
+        "hash": "sha1:ba3a7a59cef5059f4674b5077ad9e98e18a72e9b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d232aa62acc2bf53c487675745a29602"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libcapi.so",
+        "cpe": "file:/181cd9d5d989ddc6659561e1eb404fe8fef0f9ff",
+        "hash": "sha1:181cd9d5d989ddc6659561e1eb404fe8fef0f9ff",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9a6d433e6aa0252b4cf51f28bdf5f21d"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libchil.so",
+        "cpe": "file:/9077bccdfde0db125862f8c112c28583b8521c67",
+        "hash": "sha1:9077bccdfde0db125862f8c112c28583b8521c67",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:59ffb01b0e96eabccb628247cb978e1b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libcswift.so",
+        "cpe": "file:/cae59a12d137b84ccb75ba662fe378c46afd7009",
+        "hash": "sha1:cae59a12d137b84ccb75ba662fe378c46afd7009",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:48ddd312de937387e1d9420f51d339e3"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libgmp.so",
+        "cpe": "file:/7d2dbed2fedc8fb7b1eae52aaa408241eaf9fc9a",
+        "hash": "sha1:7d2dbed2fedc8fb7b1eae52aaa408241eaf9fc9a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:09c6528281968a10e9278635359b195b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libgost.so",
+        "cpe": "file:/cf7fddf3b1f99764d9af86774204a39abc29159b",
+        "hash": "sha1:cf7fddf3b1f99764d9af86774204a39abc29159b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:0bd240c68c175f67faa6743eb486429c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libnuron.so",
+        "cpe": "file:/9faaa44cd2e299bead8032f42d4f8553c9f916b7",
+        "hash": "sha1:9faaa44cd2e299bead8032f42d4f8553c9f916b7",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:929b3b73db29522eafbe20f0963e559c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libpadlock.so",
+        "cpe": "file:/97ca9da2129328500b5d856acd7aa8368b76d1d2",
+        "hash": "sha1:97ca9da2129328500b5d856acd7aa8368b76d1d2",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9ea055b1d6cf6d4d9b21136b005ccfaf"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libsureware.so",
+        "cpe": "file:/b2743b540634082ab8172db4e99178a3d985f72a",
+        "hash": "sha1:b2743b540634082ab8172db4e99178a3d985f72a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:446002637bcce4a7b18b12d9db642003"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/engines/libubsec.so",
+        "cpe": "file:/de3af5f5c7dcb0fe9dbde03809c23a37776a02d2",
+        "hash": "sha1:de3af5f5c7dcb0fe9dbde03809c23a37776a02d2",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:2ccf365f1b63ccb00aa698c35e37bd16"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/kdb/db2.so",
+        "cpe": "file:/92a9b95b89d5d448c06462ef8f2506844a0f6f09",
+        "hash": "sha1:92a9b95b89d5d448c06462ef8f2506844a0f6f09",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8b54b6a9e0c3f9446a4a6d63a66c4a2e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/preauth/otp.so",
+        "cpe": "file:/22fa6ff0ba99c9539cef8970ae5bfc14164c9ede",
+        "hash": "sha1:22fa6ff0ba99c9539cef8970ae5bfc14164c9ede",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:123c75a87b1dea876ed9023e851d5b47"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/preauth/pkinit.so",
+        "cpe": "file:/11214fd0f89e754d2d413805e9e964194e9fbe76",
+        "hash": "sha1:11214fd0f89e754d2d413805e9e964194e9fbe76",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:36320d1ddbe21caeb1e5337d93655b3a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/preauth/spake.so",
+        "cpe": "file:/99f3e78834fa80966d94b58976375eea78b2df53",
+        "hash": "sha1:99f3e78834fa80966d94b58976375eea78b2df53",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c758abb1993f887d16796d5750e71186"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/preauth/test.so",
+        "cpe": "file:/84507cdda4220bfb23f7bb822c7a7b70a66c0feb",
+        "hash": "sha1:84507cdda4220bfb23f7bb822c7a7b70a66c0feb",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4d3febc90bbf82e96198d759bc25f68f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/krb5/plugins/tls/k5tls.so",
+        "cpe": "file:/4a00087809fd40e73a3d13155eb957c4427812b0",
+        "hash": "sha1:4a00087809fd40e73a3d13155eb957c4427812b0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c66acda54e241144eb790e9819024e4c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/ld-2.28.so",
+        "cpe": "file:/13ee5f164f96969a6b144004cb4eb5d059e01648",
+        "hash": "sha1:13ee5f164f96969a6b144004cb4eb5d059e01648",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:2ef0e8f8b051b9e7c96ce6c06be9f2c1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libBrokenLocale-2.28.so",
+        "cpe": "file:/e6bceb4cd7d76969cee95b9416647dc0d49f711a",
+        "hash": "sha1:e6bceb4cd7d76969cee95b9416647dc0d49f711a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:0f8e709504ebd3e20e29f4680c8ffe71"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libSegFault.so",
+        "cpe": "file:/af6f749ae39b110a00dba6b2686e05ddf794964e",
+        "hash": "sha1:af6f749ae39b110a00dba6b2686e05ddf794964e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:68f504b5f7e5be2e4bdd7c6339d48ced"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libanl-2.28.so",
+        "cpe": "file:/91f075e58de59a12562e575225d7d6299219420c",
+        "hash": "sha1:91f075e58de59a12562e575225d7d6299219420c",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:f25ea4953fbbebd2644a0a13784d8cce"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libbz2.so.1.0.8",
+        "cpe": "file:/3b4bfaf3c01717b28656e786f781b929c3a4823b",
+        "hash": "sha1:3b4bfaf3c01717b28656e786f781b929c3a4823b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1eaf70988bdfe5271d38371c1aedbfb7"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libc-2.28.so",
+        "cpe": "file:/9f890eae64562db758af33176c213b6076708132",
+        "hash": "sha1:9f890eae64562db758af33176c213b6076708132",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ec65bccac31138ddff6e5e661da8e531"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcap.so.2.25",
+        "cpe": "file:/6b946fb2335168f4060458ef1193da8040b23925",
+        "hash": "sha1:6b946fb2335168f4060458ef1193da8040b23925",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:50148c73ebc3d5a21081e99c301bbcba"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcom_err.a",
+        "cpe": "file:/9dfe73450852a2adfa7ea6db46578890751527d4",
+        "hash": "sha1:9dfe73450852a2adfa7ea6db46578890751527d4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcom_err.so.2.1",
+        "cpe": "file:/f3e01bb087ee21e02d313b625d9c2a8c496fd9e1",
+        "hash": "sha1:f3e01bb087ee21e02d313b625d9c2a8c496fd9e1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:6ad1f94ffe9a20ba7422a31cd665a6f1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcrypt-2.28.so",
+        "cpe": "file:/1a762f3945a94024f16bd3d6daf11f2dad5523bd",
+        "hash": "sha1:1a762f3945a94024f16bd3d6daf11f2dad5523bd",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c9e2348fdf02e3af25ad4cf7b2714139"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcrypto.so.1.0.0",
+        "cpe": "file:/2e00700ff5e94e8ba4c76732b7c5e00217481a7a",
+        "hash": "sha1:2e00700ff5e94e8ba4c76732b7c5e00217481a7a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5b7264e332cf62ac8ad8398feb504b48"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libcurl.so.4.5.0",
+        "cpe": "file:/dc6e5621428a94d8aae363296b71e0bb895098b4",
+        "hash": "sha1:dc6e5621428a94d8aae363296b71e0bb895098b4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:1d0f41bf3d87eafa8d838e8eaa55c7e6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libdb-5.3.so",
+        "cpe": "file:/587fbf54dcaf06276668597a25926d1b756b55d7",
+        "hash": "sha1:587fbf54dcaf06276668597a25926d1b756b55d7",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:20cce78f383b7218d863467bd42029b6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libdl-2.28.so",
+        "cpe": "file:/5329e980e561074528081b142ffaf476f7b3a095",
+        "hash": "sha1:5329e980e561074528081b142ffaf476f7b3a095",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9ca3c16c92317d07d9ca05807ba3cd6c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libelf-0.176.so",
+        "cpe": "file:/6bbe28c81b63609ba96664e48cdbd0baaeabe870",
+        "hash": "sha1:6bbe28c81b63609ba96664e48cdbd0baaeabe870",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:15da287d72fe84a708f1eb9912afcbcf"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libexpat.so.1.6.11",
+        "cpe": "file:/667609453ebf15988849bf33b6ec18e90be7e56a",
+        "hash": "sha1:667609453ebf15988849bf33b6ec18e90be7e56a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:bb671508d5609b4512228800e12bd2ba"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libformw.so.6.1",
+        "cpe": "file:/883be464b6440cc5b20dd7703cc45d4e20433a42",
+        "hash": "sha1:883be464b6440cc5b20dd7703cc45d4e20433a42",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:eeffebfcac0887e1cbf59547423be426"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libfreeblpriv3.so",
+        "cpe": "file:/ecde41be6a91aaa2b92c0909a277d5a69955bd17",
+        "hash": "sha1:ecde41be6a91aaa2b92c0909a277d5a69955bd17",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9da4b1732b4d02015db58224148e5898"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libgcc_s.so.1",
+        "cpe": "file:/39d35e48034b221d48f3e1e4aa7c02953b219b66",
+        "hash": "sha1:39d35e48034b221d48f3e1e4aa7c02953b219b66",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:a343dc6e6eeb92389efa9c7d331aba33"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libgssapi_krb5.so.2.2",
+        "cpe": "file:/2ac233bcfff0bbb822bb4afbd2489aa009a8e1c0",
+        "hash": "sha1:2ac233bcfff0bbb822bb4afbd2489aa009a8e1c0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:6f1aee931fcc3f69efc860931d4074e4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libgssrpc.so.4.2",
+        "cpe": "file:/9a5319ea41d5d425937ffd8660b6d9e43334c561",
+        "hash": "sha1:9a5319ea41d5d425937ffd8660b6d9e43334c561",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d4e3ca69b1824378acd814a3995d56e3"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libhistory.so.7.0",
+        "cpe": "file:/69b39a3c4076ecec9c79de373f7a965043cdea1a",
+        "hash": "sha1:69b39a3c4076ecec9c79de373f7a965043cdea1a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:baf099b70e18edf28f27a46fd65515e1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libk5crypto.so.3.1",
+        "cpe": "file:/9456db6aa40b29030cc8d2e568147ffcdf122e6b",
+        "hash": "sha1:9456db6aa40b29030cc8d2e568147ffcdf122e6b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:b5886b19acc59e61a4d643dc043a8cf0"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkadm5clnt_mit.so.11.0",
+        "cpe": "file:/66655e2dca46bfaf5b070e4c373896429d9794b3",
+        "hash": "sha1:66655e2dca46bfaf5b070e4c373896429d9794b3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:07967f10cfe5a1720e1accab0d63e9cf"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkadm5srv_mit.so.11.0",
+        "cpe": "file:/5f96c1fbd6b2eebb8cd21df0f58d611c360bbe68",
+        "hash": "sha1:5f96c1fbd6b2eebb8cd21df0f58d611c360bbe68",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c79fa4560a8b912b71e62fa763e49eb7"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkdb5.so.9.0",
+        "cpe": "file:/9cc70ea82c9cb2bff811ba97ba525301098ab309",
+        "hash": "sha1:9cc70ea82c9cb2bff811ba97ba525301098ab309",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d1a4aff5c79df7e9fca2bd619b117f4a"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkrad.so.0.0",
+        "cpe": "file:/4887d88868fc5138819c6fbd774261542d2d9496",
+        "hash": "sha1:4887d88868fc5138819c6fbd774261542d2d9496",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:40d3d8d909bfaf3e65905514083d74b3"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkrb5.so.3.3",
+        "cpe": "file:/4005766de8407083c7cd0814287b786fef9e6477",
+        "hash": "sha1:4005766de8407083c7cd0814287b786fef9e6477",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:2d6cb8b3ca0a9c5fb14cfd66750bc6e9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libkrb5support.so.0.1",
+        "cpe": "file:/aa8b1dc0a6b940fca001ff85cd0c93bc26e2d09e",
+        "hash": "sha1:aa8b1dc0a6b940fca001ff85cd0c93bc26e2d09e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:26ffdff86ca0b870141dbd1fc3ae991d"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/liblua.so.5.3.4",
+        "cpe": "file:/7b9a3da38cdec40dd061429525ac5e21ff431f3a",
+        "hash": "sha1:7b9a3da38cdec40dd061429525ac5e21ff431f3a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:bd0fc92e135c23fc1a69ede2e1c9e5c6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/liblzma.so.5.2.4",
+        "cpe": "file:/02f2c9ff6e93969659a0c048e79237a8bbc7796a",
+        "hash": "sha1:02f2c9ff6e93969659a0c048e79237a8bbc7796a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:654d363285812eb1f6e9228d73fd2f38"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libm-2.28.so",
+        "cpe": "file:/3bce450ec0c8c8b14d64af650f5799a1aafaadfe",
+        "hash": "sha1:3bce450ec0c8c8b14d64af650f5799a1aafaadfe",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ff4705565ce696f99d279ac515b2334c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libmemusage.so",
+        "cpe": "file:/031c6f8bd860206183b64f2e78756e7ee86444da",
+        "hash": "sha1:031c6f8bd860206183b64f2e78756e7ee86444da",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c45273c0c84770cf190a7cfd448d2dc2"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libmenuw.so.6.1",
+        "cpe": "file:/dbaa990d8ae0cb5127b856512517a7892cf5001e",
+        "hash": "sha1:dbaa990d8ae0cb5127b856512517a7892cf5001e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:3ec48ba153170ab17228497ec6a050b8"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libmetalink.so.3.1.0",
+        "cpe": "file:/1233678332b5c5694fcf552a9a6ce59e8701d7cb",
+        "hash": "sha1:1233678332b5c5694fcf552a9a6ce59e8701d7cb",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:33237c845653ed3799b44a1ef583f062"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libmvec-2.28.so",
+        "cpe": "file:/151b647815dba177dc22067a24d8bb161b49f126",
+        "hash": "sha1:151b647815dba177dc22067a24d8bb161b49f126",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:295ddfe5197d8289475c7a76a0ac85c6"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libncursesw.so.6.1",
+        "cpe": "file:/8cf1b7a87aa742db97bc2679e1c40a60d1592976",
+        "hash": "sha1:8cf1b7a87aa742db97bc2679e1c40a60d1592976",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:9ae3a18ed03953f42a033c4a2572cd76"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnsl-2.28.so",
+        "cpe": "file:/a6d6a6ef1d1e281f317d10abcb8709beaa1aada9",
+        "hash": "sha1:a6d6a6ef1d1e281f317d10abcb8709beaa1aada9",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:95478b568eaeed459b151f04119e1b89"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnspr4.so",
+        "cpe": "file:/ae7c38aa78d8863f8fa25710dcd590beb475ec06",
+        "hash": "sha1:ae7c38aa78d8863f8fa25710dcd590beb475ec06",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:92e361691f6bf1488abd8c2cb67f3d16"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss3.so",
+        "cpe": "file:/8c877a0ff637ed1a4181a221209cce7dad9b5078",
+        "hash": "sha1:8c877a0ff637ed1a4181a221209cce7dad9b5078",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7261bed3186b658d9c7ad66c2c95725b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss_compat-2.28.so",
+        "cpe": "file:/b3b516ae1d34be4666348d4e8796e361430ae1b2",
+        "hash": "sha1:b3b516ae1d34be4666348d4e8796e361430ae1b2",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:caded33fab31209544222a7f1d11712b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss_db-2.28.so",
+        "cpe": "file:/a648b917b5d338e1042e4f79c0835e2a9b4f6ce3",
+        "hash": "sha1:a648b917b5d338e1042e4f79c0835e2a9b4f6ce3",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7470b2504912c02c2c4963cd7d42d4ef"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss_dns-2.28.so",
+        "cpe": "file:/e470d8c0b07f4264f972066c368cb1430fbe8b0b",
+        "hash": "sha1:e470d8c0b07f4264f972066c368cb1430fbe8b0b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:fa8289282a3d76ea9c92441dea3a08e1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss_files-2.28.so",
+        "cpe": "file:/fce7df7c990cef98f2737b00630bbef6115aee24",
+        "hash": "sha1:fce7df7c990cef98f2737b00630bbef6115aee24",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:3f7cdbbb8190939dc4e6529de5997ce9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnss_hesiod-2.28.so",
+        "cpe": "file:/d2a2aab530e799286a3f17416b15c40c98122191",
+        "hash": "sha1:d2a2aab530e799286a3f17416b15c40c98122191",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:d182fa7ebb9a7871e6d35223b33cae7c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libnssutil3.so",
+        "cpe": "file:/02163418888edeb2b6e9cd40f3a2df180057ec11",
+        "hash": "sha1:02163418888edeb2b6e9cd40f3a2df180057ec11",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8d4ce6a178b20ef923a1a5be8462195c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libpanelw.so.6.1",
+        "cpe": "file:/848ba2340aa90dae737e1f93f9bd98e0b1e56b2f",
+        "hash": "sha1:848ba2340aa90dae737e1f93f9bd98e0b1e56b2f",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:69d313e83d0d71375422267cf001f6c8"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libplc4.so",
+        "cpe": "file:/6bdacbf4cffc55e02a2ae57ea756dc3de4857e3a",
+        "hash": "sha1:6bdacbf4cffc55e02a2ae57ea756dc3de4857e3a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4ade2f83dcb2708ed83ccdb38a6fbb28"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libplds4.so",
+        "cpe": "file:/ec5044279b6912bb582c642a24b68d20513ae453",
+        "hash": "sha1:ec5044279b6912bb582c642a24b68d20513ae453",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5b1ee8a58bad0b3acf380bf182c45271"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libpopt.so.0.0.0",
+        "cpe": "file:/c2d1b127851cd17d31c0d4a10bce374a73a42ef8",
+        "hash": "sha1:c2d1b127851cd17d31c0d4a10bce374a73a42ef8",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ce55b4e71cab95562303cc681b62592c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libpthread-2.28.so",
+        "cpe": "file:/343f14c67edec93be400467d7a573b4e6fc41bf1",
+        "hash": "sha1:343f14c67edec93be400467d7a573b4e6fc41bf1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:58d1d9dd882d5e8c60db06ed053a13ff"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libreadline.so.7.0",
+        "cpe": "file:/df9b810f359437b045b3d9c945bd8acec90ea4e5",
+        "hash": "sha1:df9b810f359437b045b3d9c945bd8acec90ea4e5",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:39bb385d0051a975c97f8d5bb2b05e5c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libresolv-2.28.so",
+        "cpe": "file:/ae3b657638d7444cbc21ff168d95c3c99daaf7bf",
+        "hash": "sha1:ae3b657638d7444cbc21ff168d95c3c99daaf7bf",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:40d8662900a0068a945fc065cde469f4"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/librpm.so.8.1.0",
+        "cpe": "file:/97499591880d60c77c3a770f6a1d766d0f4cf0e2",
+        "hash": "sha1:97499591880d60c77c3a770f6a1d766d0f4cf0e2",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c42a422fc471253dc2beb20683c0c0d9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/librpmio.so.8.1.0",
+        "cpe": "file:/035f5116c00d91807a540e18d018386c7f3377cf",
+        "hash": "sha1:035f5116c00d91807a540e18d018386c7f3377cf",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:bacf23ae649eb08dfbd45a800ac41c6f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/librt-2.28.so",
+        "cpe": "file:/18e8f6832999dc4d81529e7bd11066f348b546db",
+        "hash": "sha1:18e8f6832999dc4d81529e7bd11066f348b546db",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ea0f6bc95854a1e0641ef6ee38ebf8c0"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libsoftokn3.so",
+        "cpe": "file:/a296e7a311a000bf4c4a95a4ea0aef5525eaa365",
+        "hash": "sha1:a296e7a311a000bf4c4a95a4ea0aef5525eaa365",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:055745bc0df3110b6e6bc9212ff17706"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libsolv.so.0",
+        "cpe": "file:/a4b93d5b3f675b66b3ef8baa0f2cfe791636080b",
+        "hash": "sha1:a4b93d5b3f675b66b3ef8baa0f2cfe791636080b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:995dba8fa59187fef544a3d4ad4792ab"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libsolvext.so.0",
+        "cpe": "file:/7a01746b8c05d571ccc5ed554dd575408c790894",
+        "hash": "sha1:7a01746b8c05d571ccc5ed554dd575408c790894",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:032166de0f2dfb261b8efd58da1b9e53"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libsqlite3.so.0.8.6",
+        "cpe": "file:/2eaced5162a5b6593dbbee9a515707a951e595c0",
+        "hash": "sha1:2eaced5162a5b6593dbbee9a515707a951e595c0",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:74a6bd1481bf7f49a1122cd065eb4f60"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libss.so.2.0",
+        "cpe": "file:/418cb7f3980cb418e716521f83fb4504b507361c",
+        "hash": "sha1:418cb7f3980cb418e716521f83fb4504b507361c",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:678ac8a15aed8be0d4350b0e015e8ec1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libssh2.so.1.0.1",
+        "cpe": "file:/647f4246a35afbf3d62c4e6c29b0871aa75e079e",
+        "hash": "sha1:647f4246a35afbf3d62c4e6c29b0871aa75e079e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5db653faac96b094cca8054843c303ea"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libssl.so.1.0.0",
+        "cpe": "file:/f4676f6538796a6eabe3903394a72e9bd0ef3762",
+        "hash": "sha1:f4676f6538796a6eabe3903394a72e9bd0ef3762",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8c53c2f581c2f2dd6bd6c190ea7835a1"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libtdnf.so.0.0.0",
+        "cpe": "file:/510207302e141b21ce9cb83136b0caae3919e072",
+        "hash": "sha1:510207302e141b21ce9cb83136b0caae3919e072",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:7f0861ed6f2b696f0181d4e21a4a171c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libtdnfcli.so.0.0.0",
+        "cpe": "file:/5b1de4929243cff30140d6be9ac7cdd9ed8d8fa1",
+        "hash": "sha1:5b1de4929243cff30140d6be9ac7cdd9ed8d8fa1",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4a904971f8073ec4fd6eb20e923e1e7f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libthread_db-1.0.so",
+        "cpe": "file:/343a589f4398169d4cb66e56243b1e752ddf5b51",
+        "hash": "sha1:343a589f4398169d4cb66e56243b1e752ddf5b51",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:43e2e30c44e4c63451c5f9deef4329ea"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libutil-2.28.so",
+        "cpe": "file:/1a7778b460f3f520b0e97e1ab2b1267c984e1712",
+        "hash": "sha1:1a7778b460f3f520b0e97e1ab2b1267c984e1712",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:50d8ebf8f39ff695b544b2a20d1362de"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libverto.so.0.0",
+        "cpe": "file:/47877066281bce677ef6a39e228cf9bdf6e6aa68",
+        "hash": "sha1:47877066281bce677ef6a39e228cf9bdf6e6aa68",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4a21ae72b55f302cf844b1bf47656535"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/lib/libz.so.1.2.11",
+        "cpe": "file:/7b5eb159fa56c98100060c2c21377d0a1b58fb87",
+        "hash": "sha1:7b5eb159fa56c98100060c2c21377d0a1b58fb87",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:a76beeaa9b843f060d4c4ec241d522e2"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/libexec/getconf/POSIX_V6_LP64_OFF64",
+        "cpe": "file:/1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "hash": "sha1:1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:86e997441d8779e60c12865f8af5506e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/libexec/getconf/POSIX_V7_LP64_OFF64",
+        "cpe": "file:/1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "hash": "sha1:1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:86e997441d8779e60c12865f8af5506e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/libexec/getconf/XBS5_LP64_OFF64",
+        "cpe": "file:/1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "hash": "sha1:1ded4118488e1c4086bd740f9576b8542f6d370b",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:86e997441d8779e60c12865f8af5506e"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/capsh",
+        "cpe": "file:/9778db27c97a2f831b0cfd777714a3ea984738e4",
+        "hash": "sha1:9778db27c97a2f831b0cfd777714a3ea984738e4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c7a9edd7e2e63d74e9f76140a60d9a98"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/getcap",
+        "cpe": "file:/fa4126c2374e122514be33f6bc9a359259af6c9e",
+        "hash": "sha1:fa4126c2374e122514be33f6bc9a359259af6c9e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:26adebbfda82b665c28135c30e35918f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/getpcaps",
+        "cpe": "file:/602729b1045f0d5e3a525f192d48c10571e3ca07",
+        "hash": "sha1:602729b1045f0d5e3a525f192d48c10571e3ca07",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:be14fe51ee3297fe8bd0c65c0d90fa3d"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/gss-server",
+        "cpe": "file:/8af21c56edc5ca354c8d93a9ba6b2732aa849b4c",
+        "hash": "sha1:8af21c56edc5ca354c8d93a9ba6b2732aa849b4c",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8ad1052540d77ace5e696f3da9779f1d"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kadmin.local",
+        "cpe": "file:/c04562d609c752b851b63854b27ba971f61af06e",
+        "hash": "sha1:c04562d609c752b851b63854b27ba971f61af06e",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:67b7c86aa070ae83c2977060b1bededb"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kadmind",
+        "cpe": "file:/d463cd4d6233386789f9120de6e9c9362586c537",
+        "hash": "sha1:d463cd4d6233386789f9120de6e9c9362586c537",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ec3230e62530a5f91299858c99bc8d87"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kdb5_util",
+        "cpe": "file:/74fa7c79ace7bcafac13138b1f4e34aa0cea092d",
+        "hash": "sha1:74fa7c79ace7bcafac13138b1f4e34aa0cea092d",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4a9a2c8e765b807d78ad78ece89704e9"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kprop",
+        "cpe": "file:/aba2ad328aa519de55d715499bf6851da4528dd4",
+        "hash": "sha1:aba2ad328aa519de55d715499bf6851da4528dd4",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:93f1c1d2f1d0e1708713ddaacaede60b"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kpropd",
+        "cpe": "file:/2acf7bf812e6e8e56b43868e15761b3659429f1a",
+        "hash": "sha1:2acf7bf812e6e8e56b43868e15761b3659429f1a",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:e9049ace49958b5acc61cd6e0c538e77"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/kproplog",
+        "cpe": "file:/fdf156f48f38e00ab9329f161f2c2c7f09f469df",
+        "hash": "sha1:fdf156f48f38e00ab9329f161f2c2c7f09f469df",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:f4094883b83c827c2e0f9960141644f5"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/krb5-send-pr",
+        "cpe": "file:/247496722621ab51de754860fce3353e412548af",
+        "hash": "sha1:247496722621ab51de754860fce3353e412548af",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:c5176fb9fa17e1d25a69f6dd29059601"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/krb5kdc",
+        "cpe": "file:/960ff679ac645ed013e372b9daddce3c430a46aa",
+        "hash": "sha1:960ff679ac645ed013e372b9daddce3c430a46aa",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:4b59b8e11f1abcf39bb0176571ca55d5"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/ldconfig",
+        "cpe": "file:/044642b21392aab898574c8924eeea677c85f424",
+        "hash": "sha1:044642b21392aab898574c8924eeea677c85f424",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5205e076531e156d92f0a467e58f1099"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/locale-gen.sh",
+        "cpe": "file:/05bd2e55d1b19ee1212fae2628de1ebbdf5a0836",
+        "hash": "sha1:05bd2e55d1b19ee1212fae2628de1ebbdf5a0836",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:523753afe26ea0cc1ca8fcdb8033104c"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/setcap",
+        "cpe": "file:/6f03eccc002b17779c00ee3d391ead72d1343197",
+        "hash": "sha1:6f03eccc002b17779c00ee3d391ead72d1343197",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:0153ee869617a45250dfcf1178bd61d7"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/sim_server",
+        "cpe": "file:/336daa700fe57f79a240158a137f91261ce3cdf6",
+        "hash": "sha1:336daa700fe57f79a240158a137f91261ce3cdf6",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:400180ac371665d70ba90d9249621b33"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/sserver",
+        "cpe": "file:/0dbae029d99062f54ab37bb2c00dbbb7f4660711",
+        "hash": "sha1:0dbae029d99062f54ab37bb2c00dbbb7f4660711",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:75b64d08b2ecec4e6a50c5c4e2003953"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/sbin/uuserver",
+        "cpe": "file:/955e6182ea856c7f650b7edefb39d7feb009ed10",
+        "hash": "sha1:955e6182ea856c7f650b7edefb39d7feb009ed10",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:5382a8dc3ed42e77ff2047bd5d01970f"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/share/licenses/LICENSE",
+        "cpe": "file:/c128a0d6665741ddbd7b6aa582d27000ec787af7",
+        "hash": "sha1:c128a0d6665741ddbd7b6aa582d27000ec787af7",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:ed1158e31437f4f87cdd4ab2b8613955"
+      },
+      "scanned": true
+    },
+    {
+      "resource": {
+        "type": 1,
+        "path": "/usr/share/licenses/README",
+        "cpe": "file:/53d30d0e9284650b4827c2be93364a0d18329045",
+        "hash": "sha1:53d30d0e9284650b4827c2be93364a0d18329045",
+        "layer": "/bin/sh -c #(nop) ADD file:009c0128bda1df8f213f8d4029d839550798c744c86621b575e9db7f4eb32b17 in / ",
+        "layer_digest": "sha256:663010993c44c37a1efaeeba4ed0f9904a6a7ce39d97f5ba5026760e314cade6",
+        "hash_md5": "md5:8338d019a582166489f81c186c570eb6"
+      },
+      "scanned": true
+    }
+  ],
+  "image_assurance_results": {},
+  "vulnerability_summary": {
+    "total": 12,
+    "high": 6,
+    "medium": 3,
+    "low": 1,
+    "negligible": 0,
+    "sensitive": 0,
+    "malware": 0,
+    "score_average": 7.091667,
+    "critical": 2
+  },
+  "scan_options": {
+    "scan_executables": true,
+    "scan_sensitive_data": true,
+    "show_will_not_fix": true,
+    "scan_malware": true,
+    "strict_scan": true,
+    "scan_files": true,
+    "scan_timeout": 3600000000000,
+    "manual_pull_fallback": true,
+    "save_adhoc_scans": true,
+    "use_cvss3": true,
+    "dockerless": true,
+    "system_image_platform": "amd64:::",
+    "scan_elf": true,
+    "include_sibling_advisories": true,
+    "enable_fast_scanning": true
+  },
+  "partial_results": true,
+  "initiating_user": "administrator",
+  "warnings": [
+    {
+      "subject": "Packages",
+      "message": "package manager error: failed finding rpm: exec: \"rpm\": executable file not found in $PATH"
+    }
+  ],
+  "data_date": 1587249513,
+  "pull_name": "core.harbor.domain/library/photon:3.0-20200202",
+  "changed_result": false,
+  "required_image_platform": "amd64:::",
+  "scanned_image_platform": "amd64::linux:",
+  "security_feeds_used": {
+    "executables": "fb486acfd2f2ba"
+  },
+  "adHocScanRegistry": "Harbor"
+}

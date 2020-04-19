@@ -1,15 +1,29 @@
 package starboard
 
 import (
-	"time"
+	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 
 	security "github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/aqua"
 	log "github.com/sirupsen/logrus"
-	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-func FromAquaScanReport(aquaReport aqua.ScanReport) (starboardReport security.VulnerabilityReport) {
+type Converter interface {
+	Convert(aquaReport aqua.ScanReport) security.VulnerabilityReport
+}
+
+func NewConverter(clock ext.Clock) Converter {
+	return &converter{
+		clock: clock,
+	}
+}
+
+type converter struct {
+	clock ext.Clock
+}
+
+func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport security.VulnerabilityReport) {
 	var items []security.VulnerabilityItem
 
 	for _, resourceScan := range aquaReport.Resources {
@@ -38,26 +52,26 @@ func FromAquaScanReport(aquaReport aqua.ScanReport) (starboardReport security.Vu
 				Resource:         pkg,
 				InstalledVersion: resourceScan.Resource.Version,
 				FixedVersion:     vln.FixVersion,
-				Severity:         toSeverity(vln),
+				Severity:         c.toSeverity(vln),
 				Description:      vln.Description,
-				Links:            toLinks(vln),
+				Links:            c.toLinks(vln),
 			})
 		}
 	}
 	starboardReport = security.VulnerabilityReport{
-		GeneratedAt:     v1.NewTime(time.Now()),
+		GeneratedAt:     metav1.NewTime(c.clock.Now()),
 		Vulnerabilities: items,
 		Scanner: security.Scanner{
 			Name:   "Aqua CSP",
 			Vendor: "Aqua Security",
 		},
-		Summary: toSummary(aquaReport.Summary),
+		Summary: c.toSummary(aquaReport.Summary),
 	}
 
 	return
 }
 
-func toSeverity(v aqua.Vulnerability) security.Severity {
+func (c *converter) toSeverity(v aqua.Vulnerability) security.Severity {
 	switch severity := v.AquaSeverity; severity {
 	case "critical":
 		return security.SeverityCritical
@@ -76,7 +90,7 @@ func toSeverity(v aqua.Vulnerability) security.Severity {
 	}
 }
 
-func toLinks(v aqua.Vulnerability) []string {
+func (c *converter) toLinks(v aqua.Vulnerability) []string {
 	var links []string
 	if v.NVDURL != "" {
 		links = append(links, v.NVDURL)
@@ -87,7 +101,7 @@ func toLinks(v aqua.Vulnerability) []string {
 	return links
 }
 
-func toSummary(aquaSummary aqua.VulnerabilitySummary) security.VulnerabilitySummary {
+func (c *converter) toSummary(aquaSummary aqua.VulnerabilitySummary) security.VulnerabilitySummary {
 	return security.VulnerabilitySummary{
 		CriticalCount: aquaSummary.Critical,
 		HighCount:     aquaSummary.High,

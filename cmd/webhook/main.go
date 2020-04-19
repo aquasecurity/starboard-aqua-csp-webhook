@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 	"net/http"
 	"os"
 
@@ -35,11 +36,10 @@ func run(_ []string) (err error) {
 		return
 	}
 
+	converter := starboard.NewConverter(ext.SystemClock)
 	writer := starboard.NewWriter(config.Starboard, clientset)
-	handler := api.NewHandler(writer)
-	mux := http.NewServeMux()
-	mux.HandleFunc("/", handler.AcceptScanReport)
+	handler := api.NewHandler(converter, writer)
 	log.Infof("Starting server on %s", config.API.Addr)
-	err = http.ListenAndServe(config.API.Addr, mux)
+	err = http.ListenAndServe(config.API.Addr, handler)
 	return
 }

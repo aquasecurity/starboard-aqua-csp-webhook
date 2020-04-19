@@ -7,19 +7,23 @@ import (
 	meta "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
-type Writer struct {
+type Writer interface {
+	Write(name string, report sec.VulnerabilityReport) (err error)
+}
+
+type writer struct {
 	config etc.Starboard
 	client clientset.Interface
 }
 
-func NewWriter(config etc.Starboard, client clientset.Interface) *Writer {
-	return &Writer{
+func NewWriter(config etc.Starboard, client clientset.Interface) Writer {
+	return &writer{
 		config: config,
 		client: client,
 	}
 }
 
-func (s *Writer) Write(name string, report sec.VulnerabilityReport) (err error) {
+func (s *writer) Write(name string, report sec.VulnerabilityReport) (err error) {
 	_, err = s.client.AquasecurityV1alpha1().Vulnerabilities(s.config.Namespace).Create(&sec.Vulnerability{
 		ObjectMeta: meta.ObjectMeta{
 			Name: name,
