@@ -82,6 +82,7 @@ Configuration of the webhook is done via environment variables at startup.
 
 | Name                                    | Default     | Description                        |
 | --------------------------------------- | ----------- | ---------------------------------- |
+| `STARBOARD_WEBHOOK_LOG_LEVEL`           | `info`      | The log level of `trace`, `debug`, `info`, `warn`, `warning`, `error`, `fatal` or `panic`. The standard logger logs entries with that level or anything above it.
 | `STARBOARD_WEBHOOK_API_ADDR`            | `:4000`     | Binding address for the API server |
 | `STARBOARD_WEBHOOK_STARBOARD_NAMESPACE` | `starboard` | Starboard namespace                |
 
