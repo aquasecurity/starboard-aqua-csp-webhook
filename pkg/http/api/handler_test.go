@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	sec "github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/starboard"
+	sec "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
 	"github.com/stretchr/testify/mock"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 

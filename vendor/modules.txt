@@ -1,10 +1,10 @@
-# github.com/aquasecurity/k8s-security-crds v0.0.14
+# github.com/aquasecurity/starboard-crds v0.0.15
 ## explicit
-github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity
-github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1
-github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned
-github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned/scheme
-github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1
+github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity
+github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1
+github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned
+github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/scheme
+github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1
 # github.com/caarlos0/env/v6 v6.2.1
 ## explicit
 github.com/caarlos0/env/v6
@@ -45,7 +45,7 @@ github.com/stretchr/objx
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/mock
 github.com/stretchr/testify/require
-# golang.org/x/crypto v0.0.0-20190820162420-60c769a6c586
+# golang.org/x/crypto v0.0.0-20200220183623-bac4c82f6975
 golang.org/x/crypto/ssh/terminal
 # golang.org/x/net v0.0.0-20191004110552-13f9640d40b9
 golang.org/x/net/context
@@ -77,9 +77,9 @@ google.golang.org/appengine/internal/urlfetch
 google.golang.org/appengine/urlfetch
 # gopkg.in/inf.v0 v0.9.1
 gopkg.in/inf.v0
-# gopkg.in/yaml.v2 v2.2.4
+# gopkg.in/yaml.v2 v2.2.8
 gopkg.in/yaml.v2
-# k8s.io/api v0.17.0
+# k8s.io/api v0.17.5
 k8s.io/api/admissionregistration/v1
 k8s.io/api/admissionregistration/v1beta1
 k8s.io/api/apps/v1
@@ -120,10 +120,10 @@ k8s.io/api/settings/v1alpha1
 k8s.io/api/storage/v1
 k8s.io/api/storage/v1alpha1
 k8s.io/api/storage/v1beta1
-# k8s.io/apiextensions-apiserver v0.17.0
+# k8s.io/apiextensions-apiserver v0.17.5
 k8s.io/apiextensions-apiserver/pkg/apis/apiextensions
 k8s.io/apiextensions-apiserver/pkg/apis/apiextensions/v1beta1
-# k8s.io/apimachinery v0.17.0
+# k8s.io/apimachinery v0.17.5
 ## explicit
 k8s.io/apimachinery/pkg/api/errors
 k8s.io/apimachinery/pkg/api/resource
@@ -158,7 +158,7 @@ k8s.io/apimachinery/pkg/util/yaml
 k8s.io/apimachinery/pkg/version
 k8s.io/apimachinery/pkg/watch
 k8s.io/apimachinery/third_party/forked/golang/reflect
-# k8s.io/client-go v0.17.0
+# k8s.io/client-go v0.17.5
 ## explicit
 k8s.io/client-go/discovery
 k8s.io/client-go/kubernetes/scheme

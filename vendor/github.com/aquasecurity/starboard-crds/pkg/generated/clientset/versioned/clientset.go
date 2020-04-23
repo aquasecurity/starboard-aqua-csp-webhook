@@ -5,7 +5,7 @@ package versioned
 import (
 	"fmt"
 
-	aquasecurityv1alpha1 "github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1"
+	aquasecurityv1alpha1 "github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1"
 	discovery "k8s.io/client-go/discovery"
 	rest "k8s.io/client-go/rest"
 	flowcontrol "k8s.io/client-go/util/flowcontrol"

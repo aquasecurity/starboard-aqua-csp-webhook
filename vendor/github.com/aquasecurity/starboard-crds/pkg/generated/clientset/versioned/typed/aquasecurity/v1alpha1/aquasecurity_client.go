@@ -3,8 +3,8 @@
 package v1alpha1
 
 import (
-	v1alpha1 "github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1"
-	"github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned/scheme"
+	v1alpha1 "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
