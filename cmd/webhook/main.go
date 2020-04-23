@@ -12,8 +12,8 @@ import (
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/starboard"
 	"k8s.io/client-go/rest"
 
-	secapi "github.com/aquasecurity/k8s-security-crds/pkg/generated/clientset/versioned"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/http/api"
+	secapi "github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned"
 	log "github.com/sirupsen/logrus"
 )
 

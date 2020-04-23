@@ -3,8 +3,8 @@ package starboard
 import (
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 
-	security "github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/aqua"
+	security "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
 	log "github.com/sirupsen/logrus"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )

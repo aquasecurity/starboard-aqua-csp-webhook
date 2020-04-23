@@ -3,7 +3,7 @@
 package scheme
 
 import (
-	aquasecurityv1alpha1 "github.com/aquasecurity/k8s-security-crds/pkg/apis/aquasecurity/v1alpha1"
+	aquasecurityv1alpha1 "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"
