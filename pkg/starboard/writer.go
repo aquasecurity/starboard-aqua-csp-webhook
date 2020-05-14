@@ -2,8 +2,8 @@ package starboard
 
 import (
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/etc"
-	sec "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
-	clientset "github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned"
+	sec "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	clientset "github.com/aquasecurity/starboard/pkg/generated/clientset/versioned"
 	log "github.com/sirupsen/logrus"
 	"k8s.io/apimachinery/pkg/api/errors"
 	meta "k8s.io/apimachinery/pkg/apis/meta/v1"

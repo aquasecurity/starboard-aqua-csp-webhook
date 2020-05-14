@@ -5,7 +5,7 @@ import (
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"
 
-	"github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity"
+	"github.com/aquasecurity/starboard/pkg/apis/aquasecurity"
 )
 
 // SchemeGroupVersion is group version used to register these objects
@@ -37,6 +37,8 @@ func addKnownTypes(scheme *runtime.Scheme) error {
 		&CISKubernetesBenchmarkList{},
 		&KubeHunterReport{},
 		&KubeHunterReportList{},
+		&ConfigAuditReport{},
+		&ConfigAuditReportList{},
 	)
 	meta.AddToGroupVersion(scheme, SchemeGroupVersion)
 	return nil

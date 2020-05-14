@@ -1,10 +1,10 @@
-# github.com/aquasecurity/starboard-crds v0.0.15
+# github.com/aquasecurity/starboard v0.0.1-alpha.2
 ## explicit
-github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity
-github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1
-github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned
-github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/scheme
-github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1
+github.com/aquasecurity/starboard/pkg/apis/aquasecurity
+github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1
+github.com/aquasecurity/starboard/pkg/generated/clientset/versioned
+github.com/aquasecurity/starboard/pkg/generated/clientset/versioned/scheme
+github.com/aquasecurity/starboard/pkg/generated/clientset/versioned/typed/aquasecurity/v1alpha1
 # github.com/caarlos0/env/v6 v6.2.1
 ## explicit
 github.com/caarlos0/env/v6

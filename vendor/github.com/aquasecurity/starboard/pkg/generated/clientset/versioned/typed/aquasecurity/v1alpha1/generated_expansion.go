@@ -4,6 +4,8 @@ package v1alpha1
 
 type CISKubernetesBenchmarkExpansion interface{}
 
+type ConfigAuditReportExpansion interface{}
+
 type KubeHunterReportExpansion interface{}
 
 type VulnerabilityExpansion interface{}
