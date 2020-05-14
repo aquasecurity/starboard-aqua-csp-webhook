@@ -13,7 +13,7 @@ import (
 	"k8s.io/client-go/rest"
 
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/http/api"
-	secapi "github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned"
+	starboardapi "github.com/aquasecurity/starboard/pkg/generated/clientset/versioned"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -33,7 +33,7 @@ func run(_ []string) (err error) {
 	if err != nil {
 		return
 	}
-	clientset, err := secapi.NewForConfig(cfg)
+	clientset, err := starboardapi.NewForConfig(cfg)
 	if err != nil {
 		return
 	}

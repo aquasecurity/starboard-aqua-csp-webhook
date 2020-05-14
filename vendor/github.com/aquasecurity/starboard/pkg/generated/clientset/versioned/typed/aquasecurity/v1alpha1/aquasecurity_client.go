@@ -3,14 +3,15 @@
 package v1alpha1
 
 import (
-	v1alpha1 "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
-	"github.com/aquasecurity/starboard-crds/pkg/generated/clientset/versioned/scheme"
+	v1alpha1 "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
+	"github.com/aquasecurity/starboard/pkg/generated/clientset/versioned/scheme"
 	rest "k8s.io/client-go/rest"
 )
 
 type AquasecurityV1alpha1Interface interface {
 	RESTClient() rest.Interface
 	CISKubernetesBenchmarksGetter
+	ConfigAuditReportsGetter
 	KubeHunterReportsGetter
 	VulnerabilitiesGetter
 }
@@ -22,6 +23,10 @@ type AquasecurityV1alpha1Client struct {
 
 func (c *AquasecurityV1alpha1Client) CISKubernetesBenchmarks() CISKubernetesBenchmarkInterface {
 	return newCISKubernetesBenchmarks(c)
+}
+
+func (c *AquasecurityV1alpha1Client) ConfigAuditReports(namespace string) ConfigAuditReportInterface {
+	return newConfigAuditReports(c, namespace)
 }
 
 func (c *AquasecurityV1alpha1Client) KubeHunterReports() KubeHunterReportInterface {

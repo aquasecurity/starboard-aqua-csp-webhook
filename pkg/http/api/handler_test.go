@@ -10,7 +10,7 @@ import (
 
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/starboard"
-	sec "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
+	sec "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
 	"github.com/stretchr/testify/mock"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 

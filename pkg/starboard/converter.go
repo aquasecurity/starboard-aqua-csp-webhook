@@ -4,13 +4,13 @@ import (
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/ext"
 
 	"github.com/aquasecurity/starboard-aqua-csp-webhook/pkg/aqua"
-	security "github.com/aquasecurity/starboard-crds/pkg/apis/aquasecurity/v1alpha1"
+	starboard "github.com/aquasecurity/starboard/pkg/apis/aquasecurity/v1alpha1"
 	log "github.com/sirupsen/logrus"
-	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	meta "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
 type Converter interface {
-	Convert(aquaReport aqua.ScanReport) security.VulnerabilityReport
+	Convert(aquaReport aqua.ScanReport) starboard.VulnerabilityReport
 }
 
 func NewConverter(clock ext.Clock) Converter {
@@ -23,8 +23,8 @@ type converter struct {
 	clock ext.Clock
 }
 
-func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport security.VulnerabilityReport) {
-	var items []security.VulnerabilityItem
+func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport starboard.VulnerabilityReport) {
+	var items []starboard.VulnerabilityItem
 
 	for _, resourceScan := range aquaReport.Resources {
 		for _, vln := range resourceScan.Vulnerabilities {
@@ -47,7 +47,7 @@ func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport securit
 				}).Warn("Unknown resource type")
 				pkg = resourceScan.Resource.Name
 			}
-			items = append(items, security.VulnerabilityItem{
+			items = append(items, starboard.VulnerabilityItem{
 				VulnerabilityID:  vln.Name,
 				Resource:         pkg,
 				InstalledVersion: resourceScan.Resource.Version,
@@ -58,10 +58,10 @@ func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport securit
 			})
 		}
 	}
-	starboardReport = security.VulnerabilityReport{
-		GeneratedAt:     metav1.NewTime(c.clock.Now()),
+	starboardReport = starboard.VulnerabilityReport{
+		GeneratedAt:     meta.NewTime(c.clock.Now()),
 		Vulnerabilities: items,
-		Scanner: security.Scanner{
+		Scanner: starboard.Scanner{
 			Name:   "Aqua CSP",
 			Vendor: "Aqua Security",
 		},
@@ -71,22 +71,22 @@ func (c *converter) Convert(aquaReport aqua.ScanReport) (starboardReport securit
 	return
 }
 
-func (c *converter) toSeverity(v aqua.Vulnerability) security.Severity {
+func (c *converter) toSeverity(v aqua.Vulnerability) starboard.Severity {
 	switch severity := v.AquaSeverity; severity {
 	case "critical":
-		return security.SeverityCritical
+		return starboard.SeverityCritical
 	case "high":
-		return security.SeverityHigh
+		return starboard.SeverityHigh
 	case "medium":
-		return security.SeverityMedium
+		return starboard.SeverityMedium
 	case "low":
-		return security.SeverityLow
+		return starboard.SeverityLow
 	case "negligible":
 		// TODO We should have severity None defined in k8s-security-crds
-		return security.SeverityUnknown
+		return starboard.SeverityUnknown
 	default:
 		log.WithField("severity", severity).Warn("Unknown Aqua severity")
-		return security.SeverityUnknown
+		return starboard.SeverityUnknown
 	}
 }
 
@@ -101,8 +101,8 @@ func (c *converter) toLinks(v aqua.Vulnerability) []string {
 	return links
 }
 
-func (c *converter) toSummary(aquaSummary aqua.VulnerabilitySummary) security.VulnerabilitySummary {
-	return security.VulnerabilitySummary{
+func (c *converter) toSummary(aquaSummary aqua.VulnerabilitySummary) starboard.VulnerabilitySummary {
+	return starboard.VulnerabilitySummary{
 		CriticalCount: aquaSummary.Critical,
 		HighCount:     aquaSummary.High,
 		MediumCount:   aquaSummary.Medium,

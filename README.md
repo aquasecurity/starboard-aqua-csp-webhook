@@ -28,6 +28,7 @@ This webhook is the image scan results webhook configurable in Aqua CSP manageme
    ```
    or
    ```
+   $ export GOPRIVATE=github.com/aquasecurity/starboard
    $ kubectl apply -f https://github.com/aquasecurity/k8s-security-crds/blob/master/kube/crd/vulnerabilities-crd.yaml
    ```
 4. Configure Starboard webhook in Aqua CSP management console:
